@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 
 import argparse
-import alg_01_insertion_sort
-import alg_03_merge_sort
+import insertion_sort
+import merge_sort
 
 
 def merge_insertion_sort(k, items, p, r):
   if k > r - p:
-    alg_01_insertion_sort.insertion_sort(items, p, r)
+    insertion_sort.insertion_sort(items, p, r)
   else:
     q = (p + r) / 2
     merge_insertion_sort(k, items, p, q)
     merge_insertion_sort(k, items, q + 1, r)
-    alg_03_merge_sort.merge(items, p, q, r)
+    merge_sort.merge(items, p, q, r)
 
 
 def main():
