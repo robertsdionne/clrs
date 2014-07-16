@@ -1,4 +1,4 @@
-hlrs
+clrs
 ====
 
-Reviewing the algorithms in HLRS' Introduction to Algorithms.
+Reviewing the algorithms in CLRS' Introduction to Algorithms.
