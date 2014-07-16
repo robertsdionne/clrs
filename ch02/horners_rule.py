@@ -6,7 +6,7 @@ import argparse
 def horners_rule(items, x):
   y = 0
   for i in xrange(0, len(items)):
-    y = items[i] + x * y
+    y = items[len(items) - i - 1] + x * y
   return y
 
 
