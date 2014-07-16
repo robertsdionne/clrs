@@ -5,23 +5,16 @@ import alg_01_insertion_sort
 import alg_03_merge_sort
 
 
-def assert_sorted(items, p, r):
-  for i in xrange(p, r + 1):
-    assert items[i] < items[i] + 1
-
-
 def merge_insertion_sort(k, items, p, r):
   if k > r - p:
     print p, r
     alg_01_insertion_sort.insertion_sort(items, p, r)
-    assert_sorted(items, p, r)
   else:
     q = (p + r) / 2
     print p, q, r
     merge_insertion_sort(k, items, p, q)
     merge_insertion_sort(k, items, q + 1, r)
     alg_03_merge_sort.merge(items, p, q, r)
-    assert_sorted(items, p, r)
 
 
 def main():
