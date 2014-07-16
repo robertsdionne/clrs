@@ -3,11 +3,11 @@
 import argparse
 
 
-def insertion_sort(items):
-  for j in xrange(1, len(items)):
+def insertion_sort(items, p, r):
+  for j in xrange(p + 1, r + 1):
     key = items[j]
     i = j
-    while i > 0 and items[i - 1] > key:
+    while i > p and items[i - 1] > key:
       items[i] = items[i - 1]
       i = i - 1
     items[i] = key
@@ -19,7 +19,7 @@ def main():
       'integers', metavar = 'N', type = int, nargs = '+', help = 'Integers to sort.')
   arguments = commands.parse_args()
   print arguments.integers
-  insertion_sort(arguments.integers)
+  insertion_sort(arguments.integers, 0, len(arguments.integers) - 1)
   print arguments.integers
 
 

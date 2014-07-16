@@ -3,11 +3,11 @@
 import argparse
 
 
-def selection_sort(items):
-  for j in xrange(0, len(items) - 1):
+def selection_sort(items, p, r):
+  for j in xrange(p, r):
     min = items[j]
     argmin = j
-    for i in xrange(j + 1, len(items)):
+    for i in xrange(j + 1, r + 1):
       if items[i] < min:
         min = items[i]
         argmin = i
@@ -22,7 +22,7 @@ def main():
       'integers', metavar = 'N', type = int, nargs = '+', help = 'Integers to sort.')
   arguments = commands.parse_args()
   print arguments.integers
-  selection_sort(arguments.integers)
+  selection_sort(arguments.integers, 0, len(arguments.integers) - 1)
   print arguments.integers
 
 
