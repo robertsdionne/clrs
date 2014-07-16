@@ -11,9 +11,7 @@ def selection_sort(items, p, r):
       if items[i] < min:
         min = items[i]
         argmin = i
-    temp = items[j]
-    items[j] = min
-    items[argmin] = temp
+    items[j], items[argmin] = items[argmin], items[j]
 
 
 def main():
